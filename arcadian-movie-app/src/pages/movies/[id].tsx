@@ -13,7 +13,7 @@ interface Movie {
 
 const MovieDetails = () => {
   const router = useRouter();
-  const { id } = router.query;
+  const id = router.query.id;
   const [movie, setMovie] = useState<Movie | null>(null);
 
   useEffect(() => {
@@ -27,7 +27,7 @@ const MovieDetails = () => {
     }
   }, [id]);
 
-  if (!movie) return <div>Loading...</div>;
+  if (!movie) return <div>Loading... </div>;
 
   return (
     <div>

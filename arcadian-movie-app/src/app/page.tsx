@@ -21,7 +21,6 @@ export default function Home() {
     e.preventDefault();
     const response = await fetch(`/api/movies?title=${title}`);
     const data = await response.json();
-    console.dir(data);
     setMovies(data.Search || []);
   };
 
