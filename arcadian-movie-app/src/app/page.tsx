@@ -1,8 +1,10 @@
 // pages/index.tsx
 "use client"
 
+import { Button, Col, Form, InputGroup, Row } from 'react-bootstrap';
 import { FormEvent, useState } from 'react';
 
+import CardComponent from './components/Card';
 import Image from "next/image";
 import Link from 'next/link';
 
@@ -27,27 +29,37 @@ export default function Home() {
   return (
     <div>
       <h1>Movie Search</h1>
-      <form onSubmit={searchMovies}>
-        <input 
+      <Form onSubmit={searchMovies}>
+      <Form.Group controlId="movieTitle">
+        <Form.Control 
           type="text" 
           value={title} 
           onChange={(e) => setTitle(e.target.value)} 
           placeholder="Enter movie title" 
+          style={{ width: '300px' }}
         />
-        <button type="submit">Search</button>
-      </form>
-      <ul>
-        {movies.map(movie => (
-          <li key={movie.imdbID}>
-            <Link href={`/movies/${movie.imdbID}`} legacyBehavior>
-              <a>
-                <h2>{movie.Title} ({movie.Year})</h2>
-                {movie.Poster !== 'N/A' && <Image width="100" height="100" src={movie.Poster} alt={`${movie.Title} poster`} />}
-              </a>
-            </Link>
-          </li>
+      <Button variant="primary" type="submit">
+        Search
+      </Button>
+      </Form.Group>
+    </Form>
+      <div>
+      <nav className="navbar bg-body-tertiary">
+      </nav>
+      <Row>
+        {movies.map((movie) => (
+          <Col key={movie.imdbID} sm={12} md={6} lg={5} xl={3}>
+            <CardComponent 
+                id={movie.imdbID}
+                title={movie.Title}
+                year={movie.Year}
+                poster={movie.Poster}
+            />
+          </Col>
         ))}
-      </ul>
+      </Row>
     </div>
+    </div>
+    
   );
 }
