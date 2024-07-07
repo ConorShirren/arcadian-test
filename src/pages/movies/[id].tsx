@@ -41,25 +41,27 @@ const MovieDetails = () => {
   return (
     <div>
       <HeaderComponent/>
-      <Card className='my-3 p-3 rounded'>
-      {movie.Poster !== 'N/A' && <Card.Img variant="top" src={movie.Poster} />}
-        <Card.Body>
-          <Card.Title as='div' className='product-title'>
-          <strong>{movie.Title}</strong>
-          </Card.Title>
-          <br/>
-          <Card.Text as='div'>{movie.Plot}</Card.Text>
-          <br/>
-          <Card.Text as='div'><b>Released:</b> {movie.Year}</Card.Text>
-          <Card.Text as='div'><b>Genre:</b> {movie.Genre}</Card.Text>
-          <Card.Text as='div'><b>Runtime:</b> {movie.Runtime}</Card.Text>
-          <Card.Text as='div'><b>Main Cast:</b> {movie.Actors}</Card.Text>
-          <Card.Text as='div'><b>Languages:</b> {movie.Language}</Card.Text>
-          <Card.Text as='div'><b>Awards:</b> {movie.Awards}</Card.Text>
-          <Card.Text as='div'><b>Box Office:</b> {movie.BoxOffice}</Card.Text>
-          <Card.Text as='div'><b>IMDB Score:</b> {movie.imdbRating}</Card.Text>
-        </Card.Body>
-      </Card>
+      <div className="container">
+        <Card className='my-3 p-3 rounded'>
+        {movie.Poster !== 'N/A' && <Card.Img variant="top" src={movie.Poster} />}
+          <Card.Body>
+            <Card.Title as='div' className='product-title'>
+            <strong>{movie.Title}</strong>
+            </Card.Title>
+            <br/>
+            <Card.Text as='div'>{movie.Plot}</Card.Text>
+            <br/>
+            <Card.Text as='div'><b>Released:</b> {movie.Year}</Card.Text>
+            <Card.Text as='div'><b>Genre:</b> {movie.Genre}</Card.Text>
+            <Card.Text as='div'><b>Runtime:</b> {movie.Runtime}</Card.Text>
+            <Card.Text as='div'><b>Main Cast:</b> {movie.Actors}</Card.Text>
+            <Card.Text as='div'><b>Languages:</b> {movie.Language}</Card.Text>
+            <Card.Text as='div'><b>Awards:</b> {movie.Awards}</Card.Text>
+            <Card.Text as='div'><b>Box Office:</b> {movie.BoxOffice}</Card.Text>
+            <Card.Text as='div'><b>IMDB Score:</b> {movie.imdbRating}</Card.Text>
+          </Card.Body>
+        </Card>
+      </div>
     </div>
   );
 };

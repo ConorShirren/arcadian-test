@@ -1,7 +1,10 @@
 // pages/index.tsx
 "use client"
 
-import { Button, Col, Form, FormControl, InputGroup, Row } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootswatch/dist/yeti/bootstrap.min.css';
+
+import { Button, Col, Form, FormControl, InputGroup, Navbar, Row } from 'react-bootstrap';
 import { FormEvent, useState } from 'react';
 
 import CardComponent from './components/Card';
@@ -26,8 +29,9 @@ export default function Home() {
   };
 
   return (
-    <div className="container">
+    <div>
       <HeaderComponent />
+       <div className="container">
       <div>
         <Form onSubmit={searchMovies}>
           <Form.Group controlId="movieTitle">
@@ -59,6 +63,7 @@ export default function Home() {
             </Col>
           ))}
         </Row>
+      </div>
       </div>
     </div>
   );
