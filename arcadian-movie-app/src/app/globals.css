@@ -3,3 +3,38 @@
 @tailwind utilities;
 @import "~bootstrap/dist/css/bootstrap.min.css";
 
+/* Container and header styling */
+.container {
+  margin-top: 20px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.header h1 {
+  font-size: 2rem;
+  margin: 0;
+}
+
+.header p {
+  font-size: 1rem;
+  color: gray;
+}
+
+
+/* Card styling */
+.card {
+  margin-bottom: 20px;
+}
+
+.card-img-top {
+  object-fit: cover;
+}
+
+/* Input styling */
+
+.fixed-width-input {
+  width: 300px;
+}

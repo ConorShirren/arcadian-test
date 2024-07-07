@@ -1,9 +1,9 @@
 import { Card } from 'react-bootstrap';
 import Link from 'next/link';
-import { Movie } from '../types';
+import { MovieCard } from '../types';
 import React from 'react';
 
-const CardComponent: React.FC<Movie> = ({
+const CardComponent: React.FC<MovieCard> = ({
   id,
   title,
   year,
@@ -20,7 +20,6 @@ const CardComponent: React.FC<Movie> = ({
         </Card.Title>
         <Card.Text as='div'>Year: {year}</Card.Text>
         <br/>
-        <Card.Text as='div'>IMDB ID: {id}</Card.Text>
       </Card.Body>
 
     </Card>

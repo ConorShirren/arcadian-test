@@ -1,12 +1,11 @@
 // pages/index.tsx
 "use client"
 
-import { Button, Col, Form, InputGroup, Row } from 'react-bootstrap';
+import { Button, Col, Form, FormControl, InputGroup, Row } from 'react-bootstrap';
 import { FormEvent, useState } from 'react';
 
 import CardComponent from './components/Card';
-import Image from "next/image";
-import Link from 'next/link';
+import HeaderComponent from './components/Header';
 
 interface Movie {
   imdbID: string;
@@ -27,39 +26,40 @@ export default function Home() {
   };
 
   return (
-    <div>
-      <h1>Movie Search</h1>
-      <Form onSubmit={searchMovies}>
-      <Form.Group controlId="movieTitle">
-        <Form.Control 
-          type="text" 
-          value={title} 
-          onChange={(e) => setTitle(e.target.value)} 
-          placeholder="Enter movie title" 
-          style={{ width: '300px' }}
-        />
-      <Button variant="primary" type="submit">
-        Search
-      </Button>
-      </Form.Group>
-    </Form>
+    <div className="container">
+      <HeaderComponent />
       <div>
-      <nav className="navbar bg-body-tertiary">
-      </nav>
-      <Row>
-        {movies.map((movie) => (
-          <Col key={movie.imdbID} sm={12} md={6} lg={5} xl={3}>
-            <CardComponent 
-                id={movie.imdbID}
-                title={movie.Title}
-                year={movie.Year}
-                poster={movie.Poster}
-            />
-          </Col>
-        ))}
-      </Row>
+        <Form onSubmit={searchMovies}>
+          <Form.Group controlId="movieTitle">
+            <InputGroup>
+              <FormControl
+                type="text"
+                value={title}
+                onChange={(e) => setTitle(e.target.value)}
+                placeholder="Enter movie title"
+                className="fixed-width-input" // Apply custom CSS class if needed
+              />
+              <Button variant="primary" type="submit">
+                Search
+              </Button>
+            </InputGroup>
+          </Form.Group>
+        </Form>
+      </div>
+      <div>
+        <Row>
+          {movies.map((movie) => (
+            <Col key={movie.imdbID} sm={12} md={6} lg={5} xl={3}>
+              <CardComponent 
+                  id={movie.imdbID}
+                  title={movie.Title}
+                  year={movie.Year}
+                  poster={movie.Poster}
+              />
+            </Col>
+          ))}
+        </Row>
+      </div>
     </div>
-    </div>
-    
   );
 }
