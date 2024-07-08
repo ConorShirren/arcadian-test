@@ -7,6 +7,12 @@
 
 The is a simple web application built with Next.js and TypeScript. It allows users to search for movies using the Open Movie Database (OMDb) API and view detailed information about selected movies.
 
+
+
+https://github.com/ConorShirren/arcadian-test/assets/32966008/b840fb9a-2f0e-4a91-a16f-9bb5f4f9533d
+
+
+
 ### Further Improvements
 
 - Due to time constraints with other fulltime work commitments, my testing approach for this assignment was 100% manual integration testing in a local development environment using both Postman and the browser. Given more time I would want to ensure 100% unit test code coverage using Jest. 
