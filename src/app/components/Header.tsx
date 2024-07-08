@@ -1,14 +1,13 @@
+import { Container, Navbar } from 'react-bootstrap';
+
 import Link from 'next/link';
-import { Navbar } from 'react-bootstrap';
 
 const HeaderComponent = () => {
   return (
-    <Navbar bg="light" variant="light" className="mb-4">
-      <Navbar.Brand>
-        <Link href="/" passHref legacyBehavior>
-          <a >Super Simple Arcadian Movie API</a>
-        </Link>
-      </Navbar.Brand>
+    <Navbar expand="lg" bg="dark" data-bs-theme="dark" className="bg-body-tertiary">
+      <Container className="d-flex justify-content-center">
+      <Navbar.Brand href="/">Super Simple Arcadian Movie API</Navbar.Brand>
+      </Container>
     </Navbar>
   );
 };
