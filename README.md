@@ -1,36 +1,65 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
+# Arcadian Backend Developer Coding Challenge
+
+> This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
+## Project Overview
+
+The is a simple web application built with Next.js and TypeScript. It allows users to search for movies using the Open Movie Database (OMDb) API and view detailed information about selected movies.
+
+### Further Improvements
+
+- Due to time constraints with other fulltime work commitments, my testing approach for this assignment was 100% manual integration testing in a local development environment using both Postman and the browser. Given more time I would want to ensure 100% unit test code coverage using Jest. 
+- Add rate limiting protection for the Open Movie DB API.
+- Improve use of middleware for error handling and logging for better development experience.
+- This was my first time working with NextJS, and although very enjoyable to get started, I would want to spend more time reading the Docs to improve my project directory structure following NextJS best practices.
+- Improve styling and CSS for better user experience
+- Add pagination ability. 
+- Add more search filters such as year, genre, and actors.
+- Explore oppertunities to deploy this NextJS application in AWS
+
+
+## Criteria
+
+- [x] Create an API route (/api/movies) that takes a query parameter (title) and fetches movie data from the OMDb API.
+- [x] Create an API route (/api/movies/:id) that fetches single movie data from the OMDb API.
+- [x] Create a simple React.js frontend using Next.js to search for movies and display results.
+
 
 ## Getting Started
 
-First, run the development server:
+### Cloning the Repository
+
+```bash
+git clone https://github.com/ConorShirren/arcadian-test.git
+cd arcadian-test
+```
+
+### Installing Dependencies
+
+Using NPM:
+
+```bash
+npm install
+```
+
+### Setting Up Environment Variables
+
+Create a `.env.local` file in the root of the project and add your OMDb API key:
+
+```plaintext
+OMDB_API_KEY=your_api_key_here
+```
+
+You cna register for an API Key using an email address here: https://www.omdbapi.com/apikey.aspx
+
+### Running the Local Development Server
+
+Using NPM:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open your browser and navigate to `http://localhost:3000` to see the application.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
